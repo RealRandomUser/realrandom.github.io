@@ -1,0 +1,97 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#list {
+    background-color: #060959;
+    height: 100vh;
+    width: 450px; /* Lățimea meniului lateral */
+    position: fixed; /* Poziționare fixă pentru a fi independent */
+    top: 0;
+    right: -450px; /* Ascunde meniul în afara ecranului */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    transition: 0.3s ease-in-out;
+    z-index: 10; /* Asigură-te că apare deasupra altor elemente */
+}
+
+#list.active {
+    right: 0; /* Face meniul vizibil */
+}
+
+.bigmac.active {
+    right: 0;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color: #000000;
+    position: relative;
+    justify-content: flex-end; /* Adăugat pentru a alinia meniul burger la dreapta */
+}
+
+.bigmac {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: 20px; /* Opțional: adaugă spațiu față de marginea din dreapta */
+}
+
+.bigmac span {
+    height: 5px;
+    width: 50%;    
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.bigmac span:nth-child(1) {
+    top: 25%;    
+}
+
+.bigmac span:nth-child(3) {
+    top: 75%;
+}
+
+.bigmac.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);    
+}
+
+.bigmac.active span:nth-child(2) {
+    opacity: 0;    
+}
+
+.bigmac.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#header {
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Adăugat pentru aliniere verticală */
+}
+
+img {
+    border-radius: 20px;
+}
+
+#mainpage {
+    background-color: #1f0da6;
+    border-radius: 25px;
+}
